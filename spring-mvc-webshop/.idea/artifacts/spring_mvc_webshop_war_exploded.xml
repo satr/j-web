@@ -6,11 +6,18 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="spring-mvc-webshop" />
+          <element id="module-output" name="components" />
+          <element id="jpa-descriptors" facet="components/jpa/JPA" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Hibernate 5.2.3-5.2.3" />
           <element id="library" level="project" name="Spring MVC-4.3.4.RELEASE" />
           <element id="library" level="project" name="Spring-4.3.4.RELEASE" />
+          <element id="library" level="project" name="jstl:jstl:1.1.2" />
+          <element id="library" level="project" name="jstl:jstl:1.2" />
+          <element id="archive" name="components.jar" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:6.0.5" />
+          <element id="library" level="project" name="org.hibernate:hibernate-entitymanager:5.2.3.Final" />
         </element>
       </element>
     </root>
