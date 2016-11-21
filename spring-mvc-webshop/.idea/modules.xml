@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../components/components.iml" filepath="$PROJECT_DIR$/../components/components.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-webshop.iml" filepath="$PROJECT_DIR$/spring-mvc-webshop.iml" />
     </modules>
   </component>
