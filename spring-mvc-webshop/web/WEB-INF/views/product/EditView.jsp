@@ -14,7 +14,8 @@
     <form action="/product/${action}" method="post">
         <div>
         <input type="hidden" name="id" value="${product.getId()}"/>
-        <jsp:include page="../Errors.jsp" />
+        <input type="hidden" name="action" value="${action}"/>
+        <jsp:include page="/WEB-INF/common/Errors.jsp" />
         <table class="product">
             <c:if test='${isEditAction}' >
                 <tr><td>SKU</td>
@@ -25,7 +26,7 @@
                 <td><input type="text" name="name" value="${product.getName()}" /></td>
             </tr>
             <tr><td>Price</td>
-                <td><input type="text" name="price" value="${product.getPrice()}" /></td>
+                <td><input type="number" name="price" step="0.0001" min="0"  placeholder='0.00' value="${product.getPrice()}" /></td>
             </tr>
             <%--<c:if test="${isEditAction}" >--%>
                 <%--<tr><td>Amount</td>--%>

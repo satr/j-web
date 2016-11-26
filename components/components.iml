@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="persistenceUnit" value="4ee0d660-b116-46a2-8079-7a73b40454be" />
+          <factory-entry name="persistenceUnit" value="d6fc4137-4d22-4d0d-ab88-0e576af20fa2" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
@@ -28,5 +28,25 @@
     <orderEntry type="library" exported="" name="Hibernate 5.2.3-5.2.3" level="project" />
     <orderEntry type="library" exported="" name="mysql:mysql-connector-java:6.0.5" level="project" />
     <orderEntry type="library" exported="" name="org.hibernate:hibernate-entitymanager:5.2.3.Final" level="project" />
+    <orderEntry type="module-library" scope="TEST">
+      <library name="JUnit4">
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/hamcrest-core-1.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/hamcrest-core-1.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

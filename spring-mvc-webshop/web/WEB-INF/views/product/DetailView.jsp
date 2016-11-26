@@ -37,7 +37,7 @@
         <div>
             <input type="button" value="Edit" onclick="window.location = '/product/edit/?id=${product.getId()}'">
             <%--<input type="button" value="Buy" onclick="window.location = '/cart/add/?id=${product.getId()}'">--%>
-            <input type="button" value="Back" onclick="window.location = '/products'">
+            <input type="button" value="List" onclick="window.location = '/products'">
         </div>
 </div>
 

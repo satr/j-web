@@ -11,7 +11,7 @@
 <%@include file="/WEB-INF/common/Header.jsp" %>
 <h3>Products</h3>
 <table class="product">
-    <tr><th>SKU</th><th>Name</th><th>Price</th><th>Amount</th><th>&nbsp;</th></tr>
+    <tr><th>SKU</th><th>Name</th><th>Price</th><%--<th>Amount</th>--%><th>&nbsp;</th></tr>
     <c:forEach items="${productList}" var="product">
         <tr><td>${product.getId()}</td>
             <td><a href='<c:url value="/product/detail?id=${product.getId()}"></c:url>'>${product.getName()}</a></td>

@@ -65,11 +65,15 @@ public abstract class HibernateRepositoryBase<T> implements Repository<T> {
         try {
             entityManager = entityManagerFactory.createEntityManager();
             entityManager.getTransaction().begin();
-            if (entityManager.contains(entity))
+            if (entityManager.contains(entity)) {
                 entityManager.persist(entity);
-            else
+                entityManager.flush();
+            } else {
                 entityManager.merge(entity);
-            entityManager.flush();
+            }
+            entityManager.getTransaction().commit();
+            entityManager.getTransaction().begin();
+                entityManager.flush();
             entityManager.getTransaction().commit();
         }
         catch(Exception ex) {

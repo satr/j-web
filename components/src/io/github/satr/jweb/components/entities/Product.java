@@ -4,13 +4,17 @@ import javax.persistence.*;
 
 @Entity
 public class Product {
-    private int id;
-    private String name;
-    private Double price;
-
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Basic
+    @Column(name = "Name")
+    private String name;
+    @Basic
+    @Column(name = "Price")
+    private Double price;
+
     public int getId() {
         return id;
     }
@@ -19,8 +23,6 @@ public class Product {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "Name")
     public String getName() {
         return name;
     }
@@ -29,8 +31,6 @@ public class Product {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "Price")
     public Double getPrice() {
         return price;
     }

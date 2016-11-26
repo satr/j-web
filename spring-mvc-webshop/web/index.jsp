@@ -1,7 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
   <head>
-    <title>YZ-WebShop</title>
+    <title>SM-WebShop</title>
     <link href="/css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
