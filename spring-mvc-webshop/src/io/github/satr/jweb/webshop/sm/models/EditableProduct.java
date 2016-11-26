@@ -1,4 +1,4 @@
-package io.github.satr.jweb.webshop.sm.editable;
+package io.github.satr.jweb.webshop.sm.models;
 
 import io.github.satr.jweb.components.entities.Product;
 

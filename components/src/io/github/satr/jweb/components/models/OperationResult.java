@@ -1,4 +1,4 @@
-package io.github.satr.jweb.webshop.sm.models;
+package io.github.satr.jweb.components.models;
 
 import java.util.ArrayList;
 import java.util.List;

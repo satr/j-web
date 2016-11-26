@@ -13,10 +13,12 @@
     <h3>Product</h3>
         <div>
             <table class="product">
-                <tr>
-                    <td>SKU</td>
-                    <td>${product.getId()}</td>
-                </tr>
+                <c:if test="${product.getId() != 0}">
+                    <tr>
+                        <td>SKU</td>
+                        <td>${product.getId()}</td>
+                    </tr>
+                </c:if>
                 <tr>
                     <td>Name</td>
                     <td>${product.getName()}</td>
