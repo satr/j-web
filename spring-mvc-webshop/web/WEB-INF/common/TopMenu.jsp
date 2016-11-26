@@ -12,20 +12,20 @@
             <td width="130px">
                 <ul class="top-menu">
                     <c:choose>
-                        <c:when test="${account != null && account.getId() != 0}">
+                        <c:when test="${sessionScope.account != null && sessionScope.account.getId() != 0}">
                             <li>
-                                Hello, <a href="/account/detail"><c:out value="${account.getFirstName()}"></c:out></a>
+                                Hello, <a href="/account/detail"><c:out value="${sessionScope.account.getFirstName()}"></c:out></a>
                             </li>
                             <li>
-                                <a href="/account/logout">Logout</a>
+                                <a href="/logout">Logout</a>
                             </li>
                         </c:when>
                         <c:otherwise>
                             <li>
-                                <a href="/account/login">Login</a>
+                                <a href="/login">Login</a>
                             </li>
                             <li>
-                                <a href="/account/signup">Sign Up</a>
+                                <a href="/signup">Sign Up</a>
                             </li>
                         </c:otherwise>
                     </c:choose>
