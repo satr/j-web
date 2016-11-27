@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Stock {
     private int amount;
     private int id;
+    private Product product;
 
     @Basic
     @Column(name = "Amount")
@@ -26,6 +27,16 @@ public class Stock {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @JoinColumn(name = "StockID")
+    @OneToOne(mappedBy = "stock")
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     @Override

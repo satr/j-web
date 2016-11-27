@@ -28,11 +28,11 @@
                     <td><fmt:formatNumber minIntegerDigits="1" maxFractionDigits="2"
                                           minFractionDigits="2">${product.getPrice()}</fmt:formatNumber></td>
                 </tr>
-                <%--<tr>--%>
-                    <%--<td>Amount</td>--%>
-                    <%--<td><fmt:formatNumber value="${product.getAmount()}" minIntegerDigits="1" maxFractionDigits="0"--%>
-                                          <%--currencyCode=""></fmt:formatNumber></td>--%>
-                <%--</tr>--%>
+                <tr>
+                    <td>Amount</td>
+                    <td><fmt:formatNumber value="${product.getStock().getAmount()}" minIntegerDigits="1" maxFractionDigits="0"
+                                          currencyCode=""></fmt:formatNumber></td>
+                </tr>
             </table>
         </div>
         <br/>

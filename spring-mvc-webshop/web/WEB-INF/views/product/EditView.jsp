@@ -28,11 +28,9 @@
             <tr><td>Price</td>
                 <td><input type="number" name="price" step="0.0001" min="0"  placeholder='0.00' value="${product.getPrice()}" /></td>
             </tr>
-            <%--<c:if test="${isEditAction}" >--%>
-                <%--<tr><td>Amount</td>--%>
-                    <%--<td><input type="text" name="amount" value="${product.getAmount()}" /></td>--%>
-                <%--</tr>--%>
-            <%--</c:if>--%>
+            <tr><td>Amount</td>
+                <td><input type="number" name="amount" min="0"  placeholder="0" value="${product.getAmount()}" /></td>
+            </tr>
         </table>
         </div>
         <br />

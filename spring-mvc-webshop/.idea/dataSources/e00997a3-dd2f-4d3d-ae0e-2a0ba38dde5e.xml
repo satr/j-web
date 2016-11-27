@@ -253,89 +253,85 @@
       <Position>3</Position>
       <DataType>float|0</DataType>
     </column>
-    <key id="65" parent="10" name="PRIMARY">
+    <column id="65" parent="10" name="StockID">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="66" parent="10" name="FK_Product_Stock">
+      <ColNames>StockID</ColNames>
+    </index>
+    <key id="67" parent="10" name="PRIMARY">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <trigger id="66" parent="10" name="Product_Stock_Insert">
-      <Turn>after-row</Turn>
-      <Events>I</Events>
-    </trigger>
-    <column id="67" parent="11" name="ProductID">
+    <foreign-key id="68" parent="10" name="product_ibfk_1">
+      <ColNames>StockID</ColNames>
+      <RefSchemaName>dev1</RefSchemaName>
+      <RefTableName>Stock</RefTableName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <column id="69" parent="11" name="Amount">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="68" parent="11" name="Amount">
+    <column id="70" parent="11" name="ID">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="69" parent="11" name="ID">
-      <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <index id="70" parent="11" name="FK_Stock_Product">
-      <ColNames>ProductID</ColNames>
-    </index>
     <key id="71" parent="11" name="PRIMARY">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="72" parent="11" name="FK_Stock_Product">
-      <ColNames>ProductID</ColNames>
-      <RefSchemaName>dev1</RefSchemaName>
-      <RefTableName>Product</RefTableName>
-      <RefColNames>ID</RefColNames>
-    </foreign-key>
-    <column id="73" parent="12" name="StudentID">
+    <column id="72" parent="12" name="StudentID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="74" parent="12" name="Name">
+    <column id="73" parent="12" name="Name">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
     </column>
-    <key id="75" parent="12" name="PRIMARY">
+    <key id="74" parent="12" name="PRIMARY">
       <ColNames>StudentID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="76" parent="13" name="StudentID">
+    <column id="75" parent="13" name="StudentID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="77" parent="13" name="CourseID">
+    <column id="76" parent="13" name="CourseID">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="78" parent="13" name="PRIMARY">
+    <key id="77" parent="13" name="PRIMARY">
       <ColNames>StudentID
 CourseID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="79" parent="13" name="SC_S_FK">
+    <foreign-key id="78" parent="13" name="SC_S_FK">
       <ColNames>StudentID</ColNames>
       <RefSchemaName>dev1</RefSchemaName>
       <RefTableName>Student</RefTableName>
       <RefColNames>StudentID</RefColNames>
     </foreign-key>
-    <column id="80" parent="14" name="TeacherID">
+    <column id="79" parent="14" name="TeacherID">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="81" parent="14" name="Name">
+    <column id="80" parent="14" name="Name">
       <Position>2</Position>
       <DataType>varchar(200)|0</DataType>
     </column>
-    <key id="82" parent="14" name="PRIMARY">
+    <key id="81" parent="14" name="PRIMARY">
       <ColNames>TeacherID</ColNames>
       <Primary>1</Primary>
     </key>

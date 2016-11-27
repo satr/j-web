@@ -1,6 +1,7 @@
 package io.github.satr.jweb.webshop.sm.controllers;
 
 import io.github.satr.jweb.components.entities.Product;
+import io.github.satr.jweb.components.entities.Stock;
 import io.github.satr.jweb.components.helpers.StringHelper;
 import io.github.satr.jweb.components.repositories.ProductRepository;
 import io.github.satr.jweb.webshop.sm.models.EditableProduct;
@@ -50,19 +51,19 @@ public class ProductController {
             model.addAttribute(ModelAttr.ERRORS, result.getErrors());
             return View.ERROR;
         }
-        model.addAttribute(ModelAttr.PRODUCT, new EditableProduct().copyFrom(result.getValue()));
+        model.addAttribute(ModelAttr.PRODUCT, result.getValue());
         return View.DETAIL;
     }
 
     @RequestMapping(value = "/product/add", method = RequestMethod.GET)
-    public String addBegin(Model model) {
+    public String add(Model model) {
         model.addAttribute(ModelAttr.ACTION, Action.ADD);
         model.addAttribute(ModelAttr.PRODUCT, new EditableProduct());
         return View.EDIT;
     }
 
     @RequestMapping(value = "/product/edit", method = RequestMethod.GET)
-    public String editBegin(@RequestParam(value="id", required = true, defaultValue = "-1")int id, Model model) {
+    public String edit(@RequestParam(value="id", required = true, defaultValue = "-1")int id, Model model) {
         OperationValueResult<Product> result = getProductBy(id);
         if(result.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, result.getErrors());
@@ -75,7 +76,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/product/edit", method = RequestMethod.POST)
-    public String editCommit(@ModelAttribute EditableProduct editableProduct, BindingResult bindingResult, Model model) {
+    public String processEdit(@ModelAttribute EditableProduct editableProduct, BindingResult bindingResult, Model model) {
         OperationResult operationResult = validateEditableProduct(editableProduct, bindingResult, model);
         if (operationResult.isFailed())
             return getEditView(Action.EDIT, editableProduct, operationResult, model);
@@ -97,12 +98,12 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/product/add", method = RequestMethod.POST)
-    public String addCommit(@ModelAttribute EditableProduct editableProduct, BindingResult bindingResult, Model model) {
+    public String processAdd(@ModelAttribute EditableProduct editableProduct, BindingResult bindingResult, Model model) {
         OperationResult operationResult = validateEditableProduct(editableProduct, bindingResult, model);
         if (operationResult.isFailed())
             return getEditView(Action.ADD, editableProduct, operationResult, model);
 
-        Product product = new Product();
+        Product product = createProduct();
         editableProduct.copyTo(product);
         OperationResult saveResult = saveProduct(product);
         if(saveResult.isFailed()) {
@@ -111,6 +112,15 @@ public class ProductController {
         }
         model.addAttribute(ModelAttr.PRODUCT, product);
         return View.DETAIL;
+    }
+
+    public Product createProduct() {
+        Product product = new Product();
+        Stock stock = new Stock();
+        product.setStock(stock);
+        stock.setProduct(product);
+        stock.setAmount(0);
+        return product;
     }
 
     private String getEditView(String action, @ModelAttribute EditableProduct editableProduct, OperationResult operationResult, Model model) {
@@ -131,6 +141,9 @@ public class ProductController {
 
         if(editableProduct.getPrice() == null || editableProduct.getPrice() < 0)
             operationResult.addError("Invalid Price");
+
+        if(editableProduct.getAmount() < 0)
+            operationResult.addError("Invalid Amount");
 
         return operationResult;
     }

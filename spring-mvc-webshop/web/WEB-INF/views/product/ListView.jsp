@@ -11,14 +11,14 @@
 <%@include file="/WEB-INF/common/Header.jsp" %>
 <h3>Products</h3>
 <table class="product">
-    <tr><th>SKU</th><th>Name</th><th>Price</th><%--<th>Amount</th>--%><th>&nbsp;</th><th>&nbsp;</th></tr>
-    <c:forEach items="${productList}" var="cartItem">
-        <tr><td>${cartItem.getId()}</td>
-            <td><a href='<c:url value="/product/detail?id=${cartItem.getId()}"></c:url>'>${cartItem.getName()}</a></td>
-            <td class="num"><fmt:formatNumber minIntegerDigits="1" maxFractionDigits="2" minFractionDigits="2" >${cartItem.getPrice()}</fmt:formatNumber></td>
-            <%--<td class="num"><fmt:formatNumber value="${product.getAmount()}" minIntegerDigits="1" maxFractionDigits="0" ></fmt:formatNumber></td>--%>
-            <td><a href='<c:url value="/buy?sku=${cartItem.getId()}"></c:url>'>Buy</a></td>
-            <td><a href='<c:url value="/product/edit?id=${cartItem.getId()}"></c:url>'>edit</a></td>
+    <tr><th>SKU</th><th>Name</th><th>Price</th><th>Amount</th><th>&nbsp;</th><th>&nbsp;</th></tr>
+    <c:forEach items="${productList}" var="product">
+        <tr><td>${product.getId()}</td>
+            <td><a href='<c:url value="/product/detail?id=${product.getId()}"></c:url>'>${product.getName()}</a></td>
+            <td class="num"><fmt:formatNumber minIntegerDigits="1" maxFractionDigits="2" minFractionDigits="2" >${product.getPrice()}</fmt:formatNumber></td>
+            <td class="num"><fmt:formatNumber value="${product.getStock().getAmount()}" minIntegerDigits="1" maxFractionDigits="0" ></fmt:formatNumber></td>
+            <td><a href='<c:url value="/buy?sku=${product.getId()}"></c:url>'>Buy</a></td>
+            <td><a href='<c:url value="/product/edit?id=${product.getId()}"></c:url>'>edit</a></td>
         </tr>
     </c:forEach>
 </table>
