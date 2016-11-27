@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - dev1@localhost" uuid="cb5ca3ff-4778-4f6c-8d9f-aeb9faba9eba">
-      <database-info product="MySQL" version="5.7.16" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
-        <extra-name-characters>#@</extra-name-characters>
-        <identifier-quote-string>`</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
-      <secret-storage>master_key</secret-storage>
-      <user-name>user1</user-name>
-      <resolve-scope>dev1:</resolve-scope>
-    </data-source>
     <data-source name="NewPersistenceUnit/Hibernate" uuid="4ee0d660-b116-46a2-8079-7a73b40454be">
       <database-info product="MySQL" version="5.7.16" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
         <extra-name-characters>#@</extra-name-characters>
@@ -29,6 +19,16 @@
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
       <user-name>user1</user-name>
       <user-password>dfdbdfdddfcfdfd8dfdedfd3</user-password>
+      <resolve-scope>dev1:</resolve-scope>
+    </data-source>
+    <data-source name="dev1@localhost" uuid="e00997a3-dd2f-4d3d-ae0e-2a0ba38dde5e">
+      <database-info product="MySQL" version="5.7.16" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>user1</user-name>
       <resolve-scope>dev1:</resolve-scope>
     </data-source>
   </component>

@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Product Detail</title>
+    <title>Cart Item</title>
     <link href="/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -38,7 +38,7 @@
         <br/>
         <div>
             <input type="button" value="Edit" onclick="window.location = '/product/edit/?id=${product.getId()}'">
-            <input type="button" value="Buy" onclick="window.location = '/buy?sku=${product.getId()}'">
+            <input type="button" value="Buy" onclick="window.location = '/cart/add/?id=${product.getId()}'">
             <input type="button" value="List" onclick="window.location = '/products'">
         </div>
 </div>

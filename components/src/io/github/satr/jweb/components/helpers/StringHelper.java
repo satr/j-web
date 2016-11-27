@@ -7,7 +7,7 @@ public class StringHelper {
     private static Pattern doublePattern = Pattern.compile("^-?\\d{1,30}([\\.\\,]\\d{1,30})?$");
 
     public static boolean isInteger(String value) {
-        return intPattern.matcher(value).matches();
+        return value != null && intPattern.matcher(value).matches();
     }
 
     /* Simplified version:
@@ -17,7 +17,7 @@ public class StringHelper {
     * - no group separator
     */
     public static boolean isDouble(String value) {
-        return doublePattern.matcher(value).matches();
+        return value != null && doublePattern.matcher(value).matches();
     }
 
     public static boolean isEmptyOrWhitespace(String value) {

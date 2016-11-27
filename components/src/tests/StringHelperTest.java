@@ -40,6 +40,7 @@ public class StringHelperTest {
         Assert.assertTrue(StringHelper.isDouble("-123.12"));
         Assert.assertTrue(StringHelper.isDouble("-123,12"));
         Assert.assertTrue(StringHelper.isDouble("0.0"));
+        Assert.assertTrue(StringHelper.isDouble(null));
 
         Assert.assertFalse(StringHelper.isDouble(""));
         Assert.assertFalse(StringHelper.isDouble("" + Double.MAX_VALUE + "0"));
@@ -53,6 +54,7 @@ public class StringHelperTest {
         Assert.assertFalse(StringHelper.isDouble("123."));
         Assert.assertFalse(StringHelper.isDouble("..0"));
         Assert.assertFalse(StringHelper.isDouble("abc"));
+        Assert.assertFalse(StringHelper.isDouble(null));
     }
 
 }

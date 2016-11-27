@@ -1,6 +1,5 @@
 package io.github.satr.jweb.webshop.sm.controllers;
 
-import io.github.satr.jweb.components.entities.Account;
 import io.github.satr.jweb.components.helpers.StringHelper;
 import io.github.satr.jweb.components.models.OperationResult;
 import io.github.satr.jweb.components.repositories.AccountRepository;
@@ -69,7 +68,7 @@ public class AccountController {
     }
 
     private boolean authenticate(HttpServletRequest request, String email, String password, OperationResult result) {
-        Account account = null;
+        io.github.satr.jweb.components.entities.Account account = null;
         try {
             account = accountRepository.getByEmail(email);
         } catch (SQLException e) {
@@ -86,7 +85,7 @@ public class AccountController {
         return true;
     }
 
-    private void setAccountToSession(HttpServletRequest request, Account account) {
+    private void setAccountToSession(HttpServletRequest request, io.github.satr.jweb.components.entities.Account account) {
         request.getSession().setAttribute(Env.SessionAttr.ACCOUNT, account);
     }
 
@@ -97,7 +96,7 @@ public class AccountController {
 
     @RequestMapping(value = "/account/detail", method = RequestMethod.GET)
     public String viewDetail(HttpServletRequest request) {
-        Account account = getAccountFromSession(request);
+        io.github.satr.jweb.components.entities.Account account = getAccountFromSession(request);
         if(account == null)
             return login();
         return View.DETAIL;
@@ -113,7 +112,7 @@ public class AccountController {
 
     @RequestMapping(value = "/account/edit", method = RequestMethod.GET)
     public String editAccount(HttpServletRequest request, Model model) {
-        Account account = getAccountFromSession(request);
+        io.github.satr.jweb.components.entities.Account account = getAccountFromSession(request);
         if(account == null)
             return login();
 
@@ -123,13 +122,13 @@ public class AccountController {
         return View.EDIT;
     }
 
-    private Account getAccountFromSession(HttpServletRequest request) {
-        return (Account) request.getSession().getAttribute(Env.SessionAttr.ACCOUNT);
+    private io.github.satr.jweb.components.entities.Account getAccountFromSession(HttpServletRequest request) {
+        return (io.github.satr.jweb.components.entities.Account) request.getSession().getAttribute(Env.SessionAttr.ACCOUNT);
     }
 
     @RequestMapping(value = "/account/edit", method = RequestMethod.POST)
     public String processEdit(@ModelAttribute EditableAccount editableAccount, BindingResult bindingResult, HttpServletRequest request, Model model) {
-        Account account = editableAccount.isSignUpAction() ? createAccount() : getAccountFromSession(request);
+        io.github.satr.jweb.components.entities.Account account = editableAccount.isSignUpAction() ? createAccount() : getAccountFromSession(request);
         OperationResult operationResult = validateEditableProduct(editableAccount, account, bindingResult);
         if(operationResult.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, operationResult.getErrors());
@@ -151,9 +150,9 @@ public class AccountController {
         return editableAccount.isSignUpAction() ? View.WELCOME_REGISTERED : View.DETAIL;
     }
 
-    private Account createAccount() {
-        Account account = new Account();
-        account.setCreatedOn(new Timestamp(new Date().getTime()));
+    private io.github.satr.jweb.components.entities.Account createAccount() {
+        io.github.satr.jweb.components.entities.Account account = new io.github.satr.jweb.components.entities.Account();
+        account.setCreatedOn(Env.getTimestamp());
         account.setPasswordSalt(createRandomString());
         return account;
     }
@@ -163,7 +162,7 @@ public class AccountController {
         return "" + random.nextLong();
     }
 
-    private void setAccountPassword(Account account, String password) throws NoSuchAlgorithmException {
+    private void setAccountPassword(io.github.satr.jweb.components.entities.Account account, String password) throws NoSuchAlgorithmException {
         account.setPasswordHash(getHashBy(password, account.getPasswordSalt()));
     }
 
@@ -173,7 +172,7 @@ public class AccountController {
     }
 
 
-    private boolean validatePassword(Account account, String password) {
+    private boolean validatePassword(io.github.satr.jweb.components.entities.Account account, String password) {
         String passwordHash = account.getPasswordHash();
         String passwordSalt = account.getPasswordSalt();
         try {
@@ -191,7 +190,7 @@ public class AccountController {
         return String.format("%032x", new BigInteger(1, md5.digest()));
     }
 
-    private OperationResult validateEditableProduct(EditableAccount editableAccount, Account account, BindingResult bindingResult) {
+    private OperationResult validateEditableProduct(EditableAccount editableAccount, io.github.satr.jweb.components.entities.Account account, BindingResult bindingResult) {
         OperationResult operationResult = new OperationResult();
 
         for (ObjectError err: bindingResult.getAllErrors())
@@ -204,7 +203,7 @@ public class AccountController {
         return operationResult;
     }
 
-    private void validateNewPassword(EditableAccount editableAccount, Account account, OperationResult operationResult) {
+    private void validateNewPassword(EditableAccount editableAccount, io.github.satr.jweb.components.entities.Account account, OperationResult operationResult) {
         boolean isSignUpAction = editableAccount.isSignUpAction();
 
         boolean missedNewPassword = StringHelper.isEmptyOrWhitespace(editableAccount.getNewPassword());
@@ -225,7 +224,7 @@ public class AccountController {
             operationResult.addError("Invalid Current Password");
     }
 
-    private void validateNewEmail(EditableAccount editableAccount, Account account, OperationResult operationResult) {
+    private void validateNewEmail(EditableAccount editableAccount, io.github.satr.jweb.components.entities.Account account, OperationResult operationResult) {
         boolean isSignUpAction = editableAccount.isSignUpAction() || account == null;
 
         if (StringHelper.isEmptyOrWhitespace(editableAccount.getEmail())) {

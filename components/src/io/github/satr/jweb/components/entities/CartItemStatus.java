@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class CartItemStatus {
     private int id;
     private String name;
+    private String itemKey;
 
     @Id
     @Column(name = "ID")
@@ -26,6 +27,16 @@ public class CartItemStatus {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Basic
+    @Column(name = "ItemKey")
+    public String getItemKey() {
+        return itemKey;
+    }
+
+    public void setItemKey(String key) {
+        this.itemKey = key;
     }
 
     @Override

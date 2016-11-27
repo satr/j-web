@@ -3,7 +3,6 @@ package io.github.satr.jweb.components.repositories;
 import io.github.satr.jweb.components.entities.Account;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class AccountRepository extends HibernateRepositoryBase<Account> {
     @Override
@@ -17,8 +16,7 @@ public class AccountRepository extends HibernateRepositoryBase<Account> {
     }
 
     public Account getByEmail(String email) throws SQLException {
-        List<Account> list = getQueryable("from Account where email = :email",
+        return getQueryableEnity("from Account where email = :email",
                                             query -> query.setParameter("email", email));
-        return list.size() == 0 ? null : list.get(0);
     }
 }

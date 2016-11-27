@@ -5,6 +5,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class HibernateRepositoryBase<T> implements Repository<T> {
@@ -29,8 +31,7 @@ public abstract class HibernateRepositoryBase<T> implements Repository<T> {
             return (T)entityManager.find(getEntityClass(), id);
         }
         finally {
-            if(entityManager != null && entityManager.isOpen())
-                entityManager.close();
+            closeEntityManager(entityManager);
         }
     }
 
@@ -51,40 +52,96 @@ public abstract class HibernateRepositoryBase<T> implements Repository<T> {
                 setParamsDelegate.setParams(query);
             return query.getResultList();
         }
-        finally {
-            if(entityManager != null && entityManager.isOpen())
-                entityManager.close();
+        catch(Exception ex) {
+            ex.printStackTrace();
+            return new ArrayList<T>();
         }
+        finally {
+            closeEntityManager(entityManager);
+        }
+    }
+
+    protected T getQueryableEnity(String sql, QueryParamsDelegate setParamsDelegate) throws SQLException {
+        List<T> list = getQueryable(sql, setParamsDelegate);
+        return list.size() == 0 ? null : list.get(0);
     }
 
     protected abstract Class getEntityClass();
 
     @Override
     public void save(T entity) throws SQLException {
+        if(entity == null)
+            return;
+        save(Arrays.asList(entity));
+    }
+
+    @Override
+    public void save(List<T> entities) {
+        if(entities == null || entities.size() == 0)
+            return;
         EntityManager entityManager = null;
         try {
             entityManager = entityManagerFactory.createEntityManager();
             entityManager.getTransaction().begin();
-            if (entityManager.contains(entity)) {
-                entityManager.persist(entity);
-                entityManager.flush();
-            } else {
-                entityManager.merge(entity);
+            for (T entity: entities) {
+                if (entityManager.contains(entity)) {
+                    entityManager.persist(entity);
+                    entityManager.flush();
+                } else {
+                    entityManager.merge(entity);
+                }
             }
             entityManager.getTransaction().commit();
             entityManager.getTransaction().begin();
-                entityManager.flush();
+            entityManager.flush();
             entityManager.getTransaction().commit();
         }
         catch(Exception ex) {
-            if (entityManager != null && entityManager.isOpen() && entityManager.getTransaction().isActive())
-                entityManager.getTransaction().rollback();
+            rollbackTransaction(entityManager);
             throw ex;
         }
         finally {
-            if(entityManager != null && entityManager.isOpen())
-                entityManager.close();
+            closeEntityManager(entityManager);
         }
+    }
+
+    @Override
+    public void remove(T entity) {
+        if(entity == null)
+            return;
+        remove(Arrays.asList(entity));
+    }
+
+    @Override
+    public void remove(List<T> entities) {
+        if(entities == null || entities.size() == 0)
+            return;
+        EntityManager entityManager = null;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            entityManager.getTransaction().begin();
+            for(T entity: entities)
+                entityManager.remove(entityManager.merge(entity));
+            entityManager.getTransaction().commit();
+        }
+        catch(Exception ex) {
+            rollbackTransaction(entityManager);
+            throw ex;
+        }
+        finally {
+            closeEntityManager(entityManager);
+        }
+
+    }
+
+    public void closeEntityManager(EntityManager entityManager) {
+        if(entityManager != null && entityManager.isOpen())
+            entityManager.close();
+    }
+
+    public void rollbackTransaction(EntityManager entityManager) {
+        if (entityManager != null && entityManager.isOpen() && entityManager.getTransaction().isActive())
+            entityManager.getTransaction().rollback();
     }
 
     protected interface QueryParamsDelegate {

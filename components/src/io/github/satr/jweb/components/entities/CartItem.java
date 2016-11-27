@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-public class CartItem {
+public class  CartItem {
     private int id;
     private double price;
     private int amount;
@@ -13,6 +13,9 @@ public class CartItem {
     private String comment;
     private Timestamp createdOn;
     private Timestamp updatedOn;
+    private Product product;
+    private int accountId;
+    private CartItemStatus status;
 
     @Id
     @Column(name = "ID")
@@ -23,6 +26,36 @@ public class CartItem {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Basic
+    @Column(name = "AccountID")
+    public int getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "StatusID")
+    public CartItemStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(CartItemStatus status) {
+        this.status = status;
+    }
+
+    @JoinColumn(name="ProductID")
+    @ManyToOne
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     @Basic
