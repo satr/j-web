@@ -1,6 +1,7 @@
 *.class
 /out
 spring-mvc-webshop/out
+gwt-webshop/out
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/

@@ -1,0 +1,32 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:HTMLPanel>
+        <div class="top-menu">
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <ul class="top-menu">
+                            <li><g:Button ui:field="home">Home</g:Button></li>
+                            <li><g:Button ui:field="products">Products</g:Button></li>
+                        </ul>
+                    </td>
+                    <td width="130px">
+                        <ul class="top-menu">
+                            <li>
+                                Hello, <g:Label ui:field="accountFirstName"></g:Label> <g:Button ui:field="accountDetail">Detail</g:Button>
+                            </li>
+                            <li>
+                                <g:Button ui:field="login">Login</g:Button>
+                                <g:Button ui:field="logout">Logout</g:Button>
+                            </li>
+                            <li>
+                                <g:Button ui:field="signUp">Sign Up</g:Button>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </g:HTMLPanel>
+</ui:UiBinder>
