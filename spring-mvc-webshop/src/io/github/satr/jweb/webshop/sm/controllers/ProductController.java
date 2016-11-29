@@ -1,52 +1,40 @@
 package io.github.satr.jweb.webshop.sm.controllers;
 
 import io.github.satr.jweb.components.entities.Product;
-import io.github.satr.jweb.components.entities.Stock;
-import io.github.satr.jweb.components.helpers.StringHelper;
-import io.github.satr.jweb.components.repositories.ProductRepository;
-import io.github.satr.jweb.webshop.sm.models.EditableProduct;
 import io.github.satr.jweb.components.models.OperationResult;
 import io.github.satr.jweb.components.models.OperationValueResult;
+import io.github.satr.jweb.webshop.sm.models.EditableProduct;
+import io.github.satr.jweb.webshop.sm.models.ProductModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class ProductController {
 
-    private final ProductRepository productRepository;
+    private final ProductModel productModel;
 
     public ProductController() {
-        productRepository = new ProductRepository();
+        productModel = new ProductModel();
     }
 
     @RequestMapping(value = "/products", method = RequestMethod.GET)
     public String getList(Model model) {
-        ArrayList<String> errors = new ArrayList<>();
-        List<Product> productList = null;
-        try {
-            productList = productRepository.getList();
-        } catch (SQLException e) {
-            errors.add(e.getMessage());//TODO - user-friendly message and system log
-            productList = new ArrayList<>();
-        }
-        model.addAttribute(ModelAttr.ERRORS, errors);
-        model.addAttribute(ModelAttr.PRODUCT_LIST, productList);
+        OperationValueResult<List<Product>> productListResult = productModel.getProducts();
+        model.addAttribute(ModelAttr.ERRORS, productListResult.getErrors());
+        model.addAttribute(ModelAttr.PRODUCT_LIST, productListResult.getValue());
         return View.LIST;
     }
 
     @RequestMapping(value = "/product/detail", method = RequestMethod.GET)
     public String detail(@RequestParam(value="id", required = true, defaultValue = "-1")int id, Model model) {
-        OperationValueResult<Product> result = getProductBy(id);
+        OperationValueResult<Product> result = productModel.getProductBy(id);
         if(result.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, result.getErrors());
             return View.ERROR;
@@ -64,7 +52,7 @@ public class ProductController {
 
     @RequestMapping(value = "/product/edit", method = RequestMethod.GET)
     public String edit(@RequestParam(value="id", required = true, defaultValue = "-1")int id, Model model) {
-        OperationValueResult<Product> result = getProductBy(id);
+        OperationValueResult<Product> result = productModel.getProductBy(id);
         if(result.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, result.getErrors());
             return View.ERROR;
@@ -77,18 +65,18 @@ public class ProductController {
 
     @RequestMapping(value = "/product/edit", method = RequestMethod.POST)
     public String processEdit(@ModelAttribute EditableProduct editableProduct, BindingResult bindingResult, Model model) {
-        OperationResult operationResult = validateEditableProduct(editableProduct, bindingResult, model);
+        OperationResult operationResult = productModel.validateEditableProduct(editableProduct, bindingResult);
         if (operationResult.isFailed())
             return getEditView(Action.EDIT, editableProduct, operationResult, model);
 
-        OperationValueResult<Product> productResult = getProductBy(editableProduct.getId());
+        OperationValueResult<Product> productResult = productModel.getProductBy(editableProduct.getId());
         if(productResult.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, productResult.getErrors());
             return View.ERROR;
         }
         Product product = productResult.getValue();
         editableProduct.copyTo(product);
-        OperationResult saveResult = saveProduct(product);
+        OperationResult saveResult = productModel.saveProduct(product);
         if(saveResult.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, saveResult.getErrors());//TODO - user-friendly message and system log
             return View.ERROR;
@@ -99,13 +87,13 @@ public class ProductController {
 
     @RequestMapping(value = "/product/add", method = RequestMethod.POST)
     public String processAdd(@ModelAttribute EditableProduct editableProduct, BindingResult bindingResult, Model model) {
-        OperationResult operationResult = validateEditableProduct(editableProduct, bindingResult, model);
+        OperationResult operationResult = productModel.validateEditableProduct(editableProduct, bindingResult);
         if (operationResult.isFailed())
             return getEditView(Action.ADD, editableProduct, operationResult, model);
 
-        Product product = createProduct();
+        Product product = productModel.createProduct();
         editableProduct.copyTo(product);
-        OperationResult saveResult = saveProduct(product);
+        OperationResult saveResult = productModel.saveProduct(product);
         if(saveResult.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, saveResult.getErrors());//TODO - user-friendly message and system log
             return View.ERROR;
@@ -114,60 +102,11 @@ public class ProductController {
         return View.DETAIL;
     }
 
-    public Product createProduct() {
-        Product product = new Product();
-        Stock stock = new Stock();
-        product.setStock(stock);
-        stock.setProduct(product);
-        stock.setAmount(0);
-        return product;
-    }
-
-    private String getEditView(String action, @ModelAttribute EditableProduct editableProduct, OperationResult operationResult, Model model) {
+    private String getEditView(String action, EditableProduct editableProduct, OperationResult operationResult, Model model) {
         model.addAttribute(ModelAttr.ERRORS, operationResult.getErrors());
         model.addAttribute(ModelAttr.PRODUCT, editableProduct);
         model.addAttribute(ModelAttr.ACTION, action);
         return View.EDIT;
-    }
-
-    private OperationResult validateEditableProduct(EditableProduct editableProduct, BindingResult bindingResult, Model model) {
-        OperationResult operationResult = new OperationResult();
-
-        for (ObjectError err: bindingResult.getAllErrors())
-            operationResult.addError("Invalid value in %s", err.getObjectName());
-
-        if(StringHelper.isEmptyOrWhitespace(editableProduct.getName()))
-            operationResult.addError("Missed Name");
-
-        if(editableProduct.getPrice() == null || editableProduct.getPrice() < 0)
-            operationResult.addError("Invalid Price");
-
-        if(editableProduct.getAmount() < 0)
-            operationResult.addError("Invalid Amount");
-
-        return operationResult;
-    }
-
-    private OperationResult saveProduct(Product product) {
-        OperationResult result = new OperationResult();
-        try {
-            productRepository.save(product);
-        } catch (SQLException e) {
-            result.addError(e.getMessage());
-        }
-        return result;
-    }
-
-    private OperationValueResult<Product> getProductBy(@RequestParam(value = "id", required = true, defaultValue = "-1") int id) {
-        OperationValueResult<Product> result = new OperationValueResult<>();
-        try {
-            result.setValue(productRepository.get(id));
-            if(result.getValue() == null)
-                result.addError("Product not found by SKU");
-        } catch (SQLException e) {
-            result.addError(e.getMessage());//TODO - user-friendly message and system log
-        }
-        return result;
     }
 
     //-- Constants --

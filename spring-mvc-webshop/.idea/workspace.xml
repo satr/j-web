@@ -7,56 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1469f7fd-c224-4750-8da3-7e1a1059c67f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/.idea/dbnavigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/.idea/libraries/gwt_user.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/gwt-webshop.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/Main.gwt.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/MainService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/MainServiceAsync.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/account/interfaces/AccountDetailView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/account/interfaces/AccountLoginView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/account/interfaces/AccountPresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/account/presenters/AccountPresenterImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/account/views/AccountDetailViewImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/account/views/AccountDetailViewImpl.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/account/views/AccountLoginViewImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/account/views/AccountLoginViewImpl.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/interfaces/ApplicationPresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/interfaces/ComponentPresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/interfaces/ComponentView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/interfaces/HomePresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/interfaces/HomeView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/interfaces/MainView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/interfaces/MenuPresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/interfaces/MenuView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/presenters/ApplicationPresenterImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/presenters/ComponentPresenterBase.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/presenters/HomePresenterImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/views/FooterView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/views/FooterView.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/views/HeaderView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/views/HeaderView.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/views/HomeViewImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/views/HomeViewImpl.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/views/MainViewImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/views/MenuViewImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/common/views/MenuViewImpl.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/product/interfaces/ProductListView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/product/interfaces/ProductPresenter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/product/presenters/ProductPresenterImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/product/views/ProductListViewImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/client/product/views/ProductListViewImpl.ui.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/src/io/github/satr/jweb/webshop/gwt/main/server/MainServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/war/Main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/war/Main.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../gwt-webshop/war/WEB-INF/web.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/AccountModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/CartModel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/ProductModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../gwt-webshop/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../gwt-webshop/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/AccountController.java" afterPath="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/AccountController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/CartController.java" afterPath="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/CartController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/ProductController.java" afterPath="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/ProductController.java" />
     </list>
     <ignored path="spring-mvc-webshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,42 +68,82 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EditView.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/product/EditView.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="31" column="97" lean-forward="false" selection-start-line="31" selection-start-column="97" selection-end-line="31" selection-end-column="97" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailView.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/product/DetailView.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="32" column="70" lean-forward="true" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="53" column="65" lean-forward="true" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
-              <folding />
+            <state relative-caret-position="493">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#896#897#0" expanded="true" />
+                <element signature="e#945#946#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SQL-Database.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../components/src/META-INF/SQL-Database.sql">
+      <file leaf-file-name="ProductModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/ProductModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="1173">
+              <caret line="71" column="47" lean-forward="false" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/AccountController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1598">
+              <caret line="96" column="8" lean-forward="false" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#974#975#0" expanded="true" />
+                <element signature="e#1023#1024#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/AccountModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1156">
+              <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6333#6334#0" expanded="true" />
+                <element signature="e#6378#6379#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CartController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/CartController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="119" column="67" lean-forward="false" selection-start-line="119" selection-start-column="67" selection-end-line="119" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1064#1065#0" expanded="true" />
+                <element signature="e#1107#1108#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CartModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/CartModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="72" column="74" lean-forward="true" selection-start-line="72" selection-start-column="74" selection-end-line="72" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -180,31 +178,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomeView.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomeView.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/HomeView.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopMenu.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/common/TopMenu.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="37" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -232,11 +210,14 @@
       <find>editableAccount</find>
       <find>new Prod</find>
       <find>getInte</find>
+      <find>accountController.accountRepository</find>
+      <find>accountController</find>
     </findStrings>
     <replaceStrings>
       <replace>get</replace>
       <replace>dest.set</replace>
       <replace>account</replace>
+      <replace>accountRepository</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -250,9 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/spring/mvc/helpers/Env.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/common/Errors.jsp" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/common/Header.jsp" />
         <option value="$PROJECT_DIR$/out/production/components/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/../components/src/META-INF/persistence.xml" />
@@ -278,7 +256,6 @@
         <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/EditableAccount.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/account/EditView.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/cart/DetailView.jsp" />
-        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/AccountController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/common/TopMenu.jsp" />
         <option value="$PROJECT_DIR$/../components/src/io/github/satr/jweb/components/repositories/ProductRepository.java" />
         <option value="$PROJECT_DIR$/../components/src/io/github/satr/jweb/components/repositories/AccountRepository.java" />
@@ -291,7 +268,6 @@
         <option value="$PROJECT_DIR$/../components/src/io/github/satr/jweb/components/repositories/HibernateRepositoryBase.java" />
         <option value="$PROJECT_DIR$/../components/src/io/github/satr/jweb/components/repositories/CartRepository.java" />
         <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/helpers/Env.java" />
-        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/CartController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/cart/ListView.jsp" />
         <option value="$PROJECT_DIR$/../components/src/io/github/satr/jweb/components/entities/Stock.java" />
         <option value="$PROJECT_DIR$/../components/src/io/github/satr/jweb/components/entities/Product.java" />
@@ -299,8 +275,13 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/views/product/EditView.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/product/ListView.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/product/DetailView.jsp" />
-        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/ProductController.java" />
         <option value="$PROJECT_DIR$/../components/src/META-INF/SQL-Database.sql" />
+        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/AccountModel.java" />
+        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/AccountController.java" />
+        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/CartController.java" />
+        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/CartModel.java" />
+        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/ProductModel.java" />
+        <option value="$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/ProductController.java" />
       </list>
     </option>
   </component>
@@ -318,9 +299,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="1280" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="738" />
+    <option name="width" value="1920" />
+    <option name="height" value="1001" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -496,6 +478,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-mvc-webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-mvc-webshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1319,7 +1323,7 @@
       <workItem from="1480148184379" duration="28137000" />
       <workItem from="1480241352243" duration="1687000" />
       <workItem from="1480244489083" duration="21163000" />
-      <workItem from="1480275291479" duration="4839000" />
+      <workItem from="1480275291479" duration="7566000" />
     </task>
     <servers />
   </component>
@@ -1344,11 +1348,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93998000" />
+    <option name="totallyTimeSpent" value="96725000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="738" extended-state="6" />
-    <editor active="false" />
+    <frame x="1280" y="23" width="1920" height="1001" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1364,7 +1368,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.66257995" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32893288" sideWeight="0.66257995" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23212321" sideWeight="0.48933902" order="7" side_tool="false" content_ui="tabs" />
@@ -1377,9 +1381,9 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19029851" sideWeight="0.4794776" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35032362" sideWeight="0.5205224" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23081024" sideWeight="0.5205224" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.4914712" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18261826" sideWeight="0.4914712" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1423,27 +1427,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/lib/servlet-api-2.4.jar!/javax/servlet/ServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="63" column="22" lean-forward="false" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/servlet-api-2.4-sources.jar!/javax/servlet/ServletRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="163" column="11" lean-forward="false" selection-start-line="163" selection-start-column="11" selection-end-line="163" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_91.jdk/Contents/Home/src.zip!/java/sql/Timestamp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1491,16 +1474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="252" column="139" lean-forward="false" selection-start-line="252" selection-start-column="139" selection-end-line="252" selection-end-column="139" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/AccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="147" column="114" lean-forward="true" selection-start-line="147" selection-start-column="65" selection-end-line="147" selection-end-column="114" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1642,17 +1615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/CartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="197" column="64" lean-forward="false" selection-start-line="197" selection-start-column="64" selection-end-line="197" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#getProduct#0;class#CartController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../components/src/io/github/satr/jweb/components/entities/CartItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -1776,14 +1738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="53" column="65" lean-forward="true" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../components/src/META-INF/SQL-Database.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1837,6 +1791,74 @@
         <state relative-caret-position="136">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/AccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="96" column="8" lean-forward="false" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#974#975#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/AccountModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6333#6334#0" expanded="true" />
+            <element signature="e#6378#6379#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/CartModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="72" column="74" lean-forward="true" selection-start-line="72" selection-start-column="74" selection-end-line="72" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/CartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="119" column="67" lean-forward="false" selection-start-line="119" selection-start-column="67" selection-end-line="119" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/models/ProductModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="71" column="47" lean-forward="false" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/io/github/satr/jweb/webshop/sm/controllers/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
