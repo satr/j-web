@@ -3,9 +3,9 @@ package io.github.satr.jweb.webshop.sm.controllers;
 import io.github.satr.jweb.components.entities.Account;
 import io.github.satr.jweb.components.models.OperationResult;
 import io.github.satr.jweb.components.models.OperationValueResult;
+import io.github.satr.jweb.frontend.models.AccountModel;
+import io.github.satr.jweb.frontend.models.EditableAccount;
 import io.github.satr.jweb.webshop.sm.helpers.Env;
-import io.github.satr.jweb.webshop.sm.models.AccountModel;
-import io.github.satr.jweb.webshop.sm.models.EditableAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -80,7 +80,7 @@ public class AccountController {
     public String processEdit(@ModelAttribute EditableAccount editableAccount, BindingResult bindingResult, HttpServletRequest request, Model model) {
         io.github.satr.jweb.components.entities.Account account = editableAccount.isSignUpAction() ? accountModel.createAccount() : getAccountFromSession(request);
 
-        OperationResult validationResult = accountModel.validateEditableProduct(editableAccount, account, bindingResult);
+        OperationResult validationResult = accountModel.validateEditableProduct(editableAccount, account, Env.getErrors(bindingResult));
 
         if(validationResult.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, validationResult.getErrors());

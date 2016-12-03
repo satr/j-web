@@ -3,15 +3,13 @@ package io.github.satr.jweb.webshop.sm.controllers;
 import io.github.satr.jweb.components.entities.Product;
 import io.github.satr.jweb.components.models.OperationResult;
 import io.github.satr.jweb.components.models.OperationValueResult;
-import io.github.satr.jweb.webshop.sm.models.EditableProduct;
-import io.github.satr.jweb.webshop.sm.models.ProductModel;
+import io.github.satr.jweb.frontend.models.EditableProduct;
+import io.github.satr.jweb.frontend.models.ProductModel;
+import io.github.satr.jweb.webshop.sm.helpers.Env;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -65,7 +63,7 @@ public class ProductController {
 
     @RequestMapping(value = "/product/edit", method = RequestMethod.POST)
     public String processEdit(@ModelAttribute EditableProduct editableProduct, BindingResult bindingResult, Model model) {
-        OperationResult operationResult = productModel.validateEditableProduct(editableProduct, bindingResult);
+        OperationResult operationResult = productModel.validateEditableProduct(editableProduct, Env.getErrors(bindingResult));
         if (operationResult.isFailed())
             return getEditView(Action.EDIT, editableProduct, operationResult, model);
 
@@ -87,7 +85,7 @@ public class ProductController {
 
     @RequestMapping(value = "/product/add", method = RequestMethod.POST)
     public String processAdd(@ModelAttribute EditableProduct editableProduct, BindingResult bindingResult, Model model) {
-        OperationResult operationResult = productModel.validateEditableProduct(editableProduct, bindingResult);
+        OperationResult operationResult = productModel.validateEditableProduct(editableProduct, Env.getErrors(bindingResult));
         if (operationResult.isFailed())
             return getEditView(Action.ADD, editableProduct, operationResult, model);
 

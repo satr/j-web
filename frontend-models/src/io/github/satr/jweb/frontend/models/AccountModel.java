@@ -1,13 +1,11 @@
-package io.github.satr.jweb.webshop.sm.models;
+package io.github.satr.jweb.frontend.models;
 
 import io.github.satr.jweb.components.entities.Account;
 import io.github.satr.jweb.components.helpers.StringHelper;
 import io.github.satr.jweb.components.models.OperationResult;
 import io.github.satr.jweb.components.models.OperationValueResult;
 import io.github.satr.jweb.components.repositories.AccountRepository;
-import io.github.satr.jweb.webshop.sm.helpers.Env;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
+import io.github.satr.jweb.frontend.helpers.Env;
 
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -16,6 +14,7 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 public class AccountModel {
@@ -113,11 +112,11 @@ public class AccountModel {
             operationResult.addError("User with this Email already registered");
     }
 
-    public OperationResult validateEditableProduct(EditableAccount editableAccount, io.github.satr.jweb.components.entities.Account account, BindingResult bindingResult) {
+    public OperationResult validateEditableProduct(EditableAccount editableAccount, Account account, List<String> errors) {
         OperationResult operationResult = new OperationResult();
 
-        for (ObjectError err: bindingResult.getAllErrors())
-            operationResult.addError("Invalid value in %s", err.getObjectName());
+        for (String err: errors)
+            operationResult.addError(err);
 
         validateNewNames(editableAccount, operationResult);
         validateNewEmail(editableAccount, account, operationResult);

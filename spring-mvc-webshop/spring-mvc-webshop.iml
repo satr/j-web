@@ -28,5 +28,6 @@
     <orderEntry type="module" module-name="components" exported="" />
     <orderEntry type="library" exported="" name="jstl:jstl:1.2" level="project" />
     <orderEntry type="library" exported="" name="jstl:jstl:1.1.2" level="project" />
+    <orderEntry type="module" module-name="frontend-models" exported="" />
   </component>
 </module>

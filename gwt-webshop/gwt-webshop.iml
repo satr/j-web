@@ -3,6 +3,8 @@
   <component name="FacetManager">
     <facet type="gwt" name="GWT">
       <configuration>
+        <setting name="compilerMaxHeapSize" value="1024" />
+        <setting name="gwtScriptOutputStyle" value="DETAILED" />
         <setting name="gwtSdkUrl" value="file://$MODULE_DIR$/../../../../frameworks/java/gwt-2.8.0" />
         <setting name="webFacet" value="Web" />
       </configuration>
@@ -26,7 +28,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.0.M13" level="application_server_libraries" />
-    <orderEntry type="library" name="gwt-user" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 9.0.0.M13" level="application_server_libraries" />
+    <orderEntry type="library" exported="" name="gwt-user" level="project" />
   </component>
 </module>

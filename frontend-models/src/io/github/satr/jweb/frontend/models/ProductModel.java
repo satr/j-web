@@ -1,4 +1,4 @@
-package io.github.satr.jweb.webshop.sm.models;
+package io.github.satr.jweb.frontend.models;
 
 import io.github.satr.jweb.components.entities.Product;
 import io.github.satr.jweb.components.entities.Stock;
@@ -6,8 +6,6 @@ import io.github.satr.jweb.components.helpers.StringHelper;
 import io.github.satr.jweb.components.models.OperationResult;
 import io.github.satr.jweb.components.models.OperationValueResult;
 import io.github.satr.jweb.components.repositories.ProductRepository;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -42,11 +40,11 @@ public class ProductModel {
         return result;
     }
 
-    public OperationResult validateEditableProduct(EditableProduct editableProduct, BindingResult bindingResult) {
+    public OperationResult validateEditableProduct(EditableProduct editableProduct, List<String> errors) {
         OperationResult operationResult = new OperationResult();
 
-        for (ObjectError err: bindingResult.getAllErrors())
-            operationResult.addError("Invalid value in %s", err.getObjectName());
+        for (String err: errors)
+            operationResult.addError(err);
 
         if(StringHelper.isEmptyOrWhitespace(editableProduct.getName()))
             operationResult.addError("Missed Name");

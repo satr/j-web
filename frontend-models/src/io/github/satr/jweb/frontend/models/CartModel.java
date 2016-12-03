@@ -1,4 +1,4 @@
-package io.github.satr.jweb.webshop.sm.models;
+package io.github.satr.jweb.frontend.models;
 
 import io.github.satr.jweb.components.entities.Account;
 import io.github.satr.jweb.components.entities.CartItem;
@@ -9,7 +9,7 @@ import io.github.satr.jweb.components.models.OperationValueResult;
 import io.github.satr.jweb.components.repositories.CartRepository;
 import io.github.satr.jweb.components.repositories.CartStatusRepository;
 import io.github.satr.jweb.components.repositories.ProductRepository;
-import io.github.satr.jweb.webshop.sm.helpers.Env;
+import io.github.satr.jweb.frontend.helpers.Env;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

@@ -1,7 +1,5 @@
 package io.github.satr.jweb.components.entities;
-
 import javax.persistence.*;
-
 @Entity
 public class Product {
     private int id;

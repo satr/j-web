@@ -28,7 +28,7 @@
     <orderEntry type="library" exported="" name="Hibernate 5.2.3-5.2.3" level="project" />
     <orderEntry type="library" exported="" name="mysql:mysql-connector-java:6.0.5" level="project" />
     <orderEntry type="library" exported="" name="org.hibernate:hibernate-entitymanager:5.2.3.Final" level="project" />
-    <orderEntry type="module-library" scope="TEST">
+    <orderEntry type="module-library" exported="">
       <library name="JUnit4">
         <CLASSES>
           <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/" />
@@ -38,7 +38,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/" />
@@ -48,5 +48,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="org.mindrot:jbcrypt:0.3m" level="project" />
+    <orderEntry type="library" name="javax.persistence:persistence-api:1.0.2" level="project" />
   </component>
 </module>

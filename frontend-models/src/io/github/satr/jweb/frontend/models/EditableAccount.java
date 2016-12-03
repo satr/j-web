@@ -1,4 +1,4 @@
-package io.github.satr.jweb.webshop.sm.models;
+package io.github.satr.jweb.frontend.models;
 
 import io.github.satr.jweb.components.entities.Account;
 
