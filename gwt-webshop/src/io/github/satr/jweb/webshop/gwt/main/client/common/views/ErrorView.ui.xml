@@ -1,0 +1,11 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:HTMLPanel>
+        <h2>Error</h2>
+        <div>
+            <g:VerticalPanel ui:field="verticalPanel">
+            </g:VerticalPanel>
+        </div>
+        <input type="button" value="Back" onclick="history.back()" />
+    </g:HTMLPanel>
+</ui:UiBinder>

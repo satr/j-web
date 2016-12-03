@@ -12,7 +12,7 @@ public class ApplicationPresenterImpl implements ApplicationPresenter {
 
     public ApplicationPresenterImpl(MainView view, MenuView menuView) {
         this.mainView = view;
-        menuView.setPresenter(this);
+        menuView.setApplicationPresenter(this);
         view.addMenu(menuView);
     }
 
@@ -49,7 +49,6 @@ public class ApplicationPresenterImpl implements ApplicationPresenter {
 
     public void setProductPresenter(ProductPresenter productPresenter) {
         this.productPresenter = productPresenter;
-        productPresenter.setApplicationPresenter(this);
     }
 
     public void setAccountPresenter(AccountPresenter accountPresenter) {

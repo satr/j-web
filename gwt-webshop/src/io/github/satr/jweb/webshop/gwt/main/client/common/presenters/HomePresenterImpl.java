@@ -6,12 +6,13 @@ import io.github.satr.jweb.webshop.gwt.main.client.common.interfaces.HomeView;
 public class HomePresenterImpl extends ComponentPresenterBase implements HomePresenter {
     private final HomeView view;
 
-    public HomePresenterImpl(HomeView view) {
+    public HomePresenterImpl(ApplicationPresenterImpl applicationPresenter, HomeView view) {
+        super(applicationPresenter);
         this.view = view;
     }
 
     @Override
     public void show() {
-        applicationPresenter.showView(view);
+        showView(view);
     }
 }

@@ -29,7 +29,8 @@
                 <input type="submit" value="Login">
                 <input type="button" value="Cancel" onclick="window.location = '/'">
             </div>
-        </form>    </div>
+        </form>
+    </div>
 </div>
 
 <%@include file="/WEB-INF/common/Footer.jsp" %>

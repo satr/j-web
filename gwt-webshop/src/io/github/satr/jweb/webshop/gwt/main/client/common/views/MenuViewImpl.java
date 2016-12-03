@@ -10,45 +10,43 @@ import io.github.satr.jweb.webshop.gwt.main.client.common.interfaces.Application
 import io.github.satr.jweb.webshop.gwt.main.client.common.interfaces.MenuView;
 
 public class MenuViewImpl extends Composite implements MenuView {
-    private ApplicationPresenter presenter;
-
-    @Override
-    public void setPresenter(ApplicationPresenter presenter) {
-
-        this.presenter = presenter;
-    }
+    private ApplicationPresenter applicationPresenter;
 
     interface MenuViewUiBinder extends UiBinder<HTMLPanel, MenuViewImpl> {
-    }
 
+    }
     private static MenuViewUiBinder ourUiBinder = GWT.create(MenuViewUiBinder.class);
 
     public MenuViewImpl() {
         initWidget(ourUiBinder.createAndBindUi(this));
     }
 
+    public void setApplicationPresenter(ApplicationPresenter applicationPresenter) {
+        this.applicationPresenter = applicationPresenter;
+    }
+
     @UiHandler("home")
     void onHomeItemClick(ClickEvent event) {
-        presenter.navigateHome();
+        applicationPresenter.navigateHome();
     }
 
     @UiHandler("products")
     void onProductsItemClick(ClickEvent event) {
-        presenter.showProducts();
+        applicationPresenter.showProducts();
     }
 
     @UiHandler("login")
     void onLoginItemClick(ClickEvent event) {
-        presenter.login();
+        applicationPresenter.login();
     }
 
     @UiHandler("logout")
     void onLogoutItemClick(ClickEvent event) {
-        presenter.logout();
+        applicationPresenter.logout();
     }
 
     @UiHandler("accountDetail")
     void onAccountDetailItemClick(ClickEvent event) {
-        presenter.showAccountDetail();
+        applicationPresenter.showAccountDetail();
     }
 }

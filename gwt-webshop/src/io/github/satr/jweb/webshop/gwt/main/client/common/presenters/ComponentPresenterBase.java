@@ -5,10 +5,9 @@ import io.github.satr.jweb.webshop.gwt.main.client.common.interfaces.ComponentPr
 import io.github.satr.jweb.webshop.gwt.main.client.common.interfaces.ComponentView;
 
 public abstract class ComponentPresenterBase implements ComponentPresenter {
-    protected ApplicationPresenter applicationPresenter;
+    private ApplicationPresenter applicationPresenter;
 
-    @Override
-    public void setApplicationPresenter(ApplicationPresenter applicationPresenter) {
+    protected ComponentPresenterBase(ApplicationPresenter applicationPresenter) {
         this.applicationPresenter = applicationPresenter;
     }
 

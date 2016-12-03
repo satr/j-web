@@ -4,10 +4,7 @@ public interface ApplicationPresenter {
     void showProducts();
     void navigateHome();
     void login();
-
     void showView(ComponentView view);
-
     void logout();
-
     void showAccountDetail();
 }

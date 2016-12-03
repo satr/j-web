@@ -5,9 +5,6 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 
-/**
- * Created by naveronics on 28/11/2016.
- */
 public class HeaderView extends Composite {
     interface HeaderViewUiBinder extends UiBinder<HTMLPanel, HeaderView> {
     }

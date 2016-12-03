@@ -19,15 +19,16 @@ public class Main implements EntryPoint {
     private ApplicationPresenterImpl applicationPresenter;
 
     public void onModuleLoad() {
-        applicationPresenter = new ApplicationPresenterImpl(new MainViewImpl(), new MenuViewImpl());
+        MainViewImpl mainView = new MainViewImpl();
+        applicationPresenter = new ApplicationPresenterImpl(mainView, new MenuViewImpl());
 
-        HomePresenterImpl homePresenter = new HomePresenterImpl(new HomeViewImpl());
+        HomePresenterImpl homePresenter = new HomePresenterImpl(applicationPresenter, new HomeViewImpl());
         applicationPresenter.setHomePresenter(homePresenter);
 
-        ProductPresenter productPresenter = new ProductPresenterImpl(new ProductListViewImpl());
+        ProductPresenter productPresenter = new ProductPresenterImpl(applicationPresenter, new ProductListViewImpl());
         applicationPresenter.setProductPresenter(productPresenter);
 
-        AccountPresenter accountPresenter = new AccountPresenterImpl(new AccountDetailViewImpl(), new AccountLoginViewImpl());
+        AccountPresenter accountPresenter = new AccountPresenterImpl(applicationPresenter, new AccountDetailViewImpl(), new AccountLoginViewImpl());
         applicationPresenter.setAccountPresenter(accountPresenter);
     }
 }
