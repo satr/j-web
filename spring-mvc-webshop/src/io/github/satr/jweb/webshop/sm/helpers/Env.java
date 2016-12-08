@@ -37,12 +37,12 @@ public class Env {
         return errors;
     }
 
-
     public class ModelAttr {
         public final static String ERRORS = "errors";
         public static final String TOTAL = "total";
         public static final String DISCOUNT = "discount";
         public static final String SUM = "sum";
+        public static final String ACTION = "action";
     }
 
     public class SessionAttr {
@@ -51,5 +51,14 @@ public class Env {
 
     public class View {
         public final static String ERROR = "ErrorView";
+    }
+
+    public class Action {
+        public static final String EDIT = "edit";
+        public static final String SIGNUP = "signup";
+    }
+
+    public boolean isEditAction(String action) {
+        return Action.EDIT.equals(action);
     }
 }

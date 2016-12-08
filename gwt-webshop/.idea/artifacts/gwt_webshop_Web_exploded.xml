@@ -9,6 +9,8 @@
           <element id="module-output" name="gwt-webshop" />
           <element id="module-output" name="components" />
           <element id="jpa-descriptors" facet="components/jpa/JPA" />
+          <element id="module-output" name="frontend-models" />
+          <element id="jpa-descriptors" facet="gwt-webshop/jpa/JPA" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="gwt-user" />
@@ -17,6 +19,11 @@
           <element id="library" level="module" name="JUnit4" module-name="components" />
           <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/junit-4.12.jar" />
           <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/hamcrest-core-1.3.jar" />
+          <element id="library" level="project" name="Hibernate 5.2.3-5.2.3" />
+          <element id="file-copy" path="$PROJECT_DIR$/../components/lib/hibernate-entitymanager-5.2.3.Final.jar" />
+          <element id="dir-copy" path="$PROJECT_DIR$/../components/lib" />
+          <element id="library" level="project" name="org.hibernate:hibernate-entitymanager:5.2.3.Final" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:6.0.5" />
         </element>
       </element>
       <element id="gwt-compiler-output" facet="gwt-webshop/gwt/GWT" />

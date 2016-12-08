@@ -7,6 +7,7 @@ import io.github.satr.jweb.webshop.gwt.main.client.account.views.AccountDetailVi
 import io.github.satr.jweb.webshop.gwt.main.client.account.views.AccountLoginViewImpl;
 import io.github.satr.jweb.webshop.gwt.main.client.common.presenters.ApplicationPresenterImpl;
 import io.github.satr.jweb.webshop.gwt.main.client.common.presenters.HomePresenterImpl;
+import io.github.satr.jweb.webshop.gwt.main.client.common.views.ErrorsViewImpl;
 import io.github.satr.jweb.webshop.gwt.main.client.common.views.HomeViewImpl;
 import io.github.satr.jweb.webshop.gwt.main.client.common.views.MainViewImpl;
 import io.github.satr.jweb.webshop.gwt.main.client.common.views.MenuViewImpl;
@@ -20,7 +21,7 @@ public class Main implements EntryPoint {
 
     public void onModuleLoad() {
         MainViewImpl mainView = new MainViewImpl();
-        applicationPresenter = new ApplicationPresenterImpl(mainView, new MenuViewImpl());
+        applicationPresenter = new ApplicationPresenterImpl(mainView, new MenuViewImpl(), new ErrorsViewImpl());
 
         HomePresenterImpl homePresenter = new HomePresenterImpl(applicationPresenter, new HomeViewImpl());
         applicationPresenter.setHomePresenter(homePresenter);

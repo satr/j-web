@@ -1,10 +1,11 @@
 package io.github.satr.jweb.components.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
-public class Account {
+public class Account implements Serializable {
     private int id;
     private String firstName;
     private String lastName;

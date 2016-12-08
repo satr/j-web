@@ -5,5 +5,7 @@ import io.github.satr.jweb.webshop.gwt.main.client.common.interfaces.ComponentVi
 import java.util.List;
 
 public interface AccountLoginView extends ComponentView {
+    void setPresenter(AccountPresenter presenter);
     void setErrors(List<String> errors);
+    void clearErrors();
 }

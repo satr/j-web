@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../components/components.iml" filepath="$PROJECT_DIR$/../components/components.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../frontend-models/frontend-models.iml" filepath="$PROJECT_DIR$/../frontend-models/frontend-models.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwt-webshop.iml" filepath="$PROJECT_DIR$/gwt-webshop.iml" />
     </modules>
   </component>

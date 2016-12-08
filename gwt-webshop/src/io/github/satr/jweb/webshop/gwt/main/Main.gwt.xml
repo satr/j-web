@@ -11,5 +11,6 @@
 
     <!-- Specify the app servlets.                   -->
     <servlet path='/MainService' class='io.github.satr.jweb.webshop.gwt.main.server.MainServiceImpl'/>
+    <servlet path="/AccountService" class="io.github.satr.jweb.webshop.gwt.main.server.account.AccountServiceImpl"/>
 
 </module>

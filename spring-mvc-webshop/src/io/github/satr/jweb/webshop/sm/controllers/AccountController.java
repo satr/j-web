@@ -9,12 +9,10 @@ import io.github.satr.jweb.webshop.sm.helpers.Env;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class AccountController {
@@ -32,9 +30,8 @@ public class AccountController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String processLogin(HttpServletRequest request, @RequestAttribute String email, @RequestAttribute String password, Model model) {
-        OperationValueResult<Account> authenticationResult = new OperationValueResult<>();
-        if(!accountModel.validateCredentialParams(email, password, authenticationResult)
-                ||  !accountModel.authenticate(email, password, authenticationResult)) {
+        OperationValueResult<Account> authenticationResult = accountModel.authenticate(email, password);
+        if(authenticationResult.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, authenticationResult.getErrors());
             return View.LOGIN;
         }
@@ -50,7 +47,7 @@ public class AccountController {
 
     @RequestMapping(value = "/account/detail", method = RequestMethod.GET)
     public String viewDetail(HttpServletRequest request) {
-        io.github.satr.jweb.components.entities.Account account = getAccountFromSession(request);
+        Account account = getAccountFromSession(request);
         if(account == null)
             return login();
         return View.DETAIL;
@@ -59,45 +56,55 @@ public class AccountController {
     @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String signUp(Model model) {
         EditableAccount editableAccount = new EditableAccount().copyFrom(accountModel.createAccount());
-        editableAccount.setActionAsSignUp();
+        model.addAttribute(Env.ModelAttr.ACTION, Env.Action.SIGNUP);
         model.addAttribute(ModelAttr.ACCOUNT, editableAccount);
         return View.EDIT;
     }
 
     @RequestMapping(value = "/account/edit", method = RequestMethod.GET)
     public String editAccount(HttpServletRequest request, Model model) {
-        io.github.satr.jweb.components.entities.Account account = getAccountFromSession(request);
+        Account account = getAccountFromSession(request);
         if(account == null)
             return login();
 
         EditableAccount editableAccount = new EditableAccount().copyFrom(account);
-        editableAccount.setActionAsEdit();
+        model.addAttribute(Env.ModelAttr.ACTION, Env.Action.EDIT);
         model.addAttribute(ModelAttr.ACCOUNT, editableAccount);
         return View.EDIT;
     }
 
     @RequestMapping(value = "/account/edit", method = RequestMethod.POST)
     public String processEdit(@ModelAttribute EditableAccount editableAccount, BindingResult bindingResult, HttpServletRequest request, Model model) {
-        io.github.satr.jweb.components.entities.Account account = editableAccount.isSignUpAction() ? accountModel.createAccount() : getAccountFromSession(request);
+        boolean isSignUpAction = Env.Action.SIGNUP.equals(request.getParameter(Env.ModelAttr.ACTION));
+        Account account = isSignUpAction ? accountModel.createAccount() : getAccountFromSession(request);
 
-        OperationResult validationResult = accountModel.validateEditableProduct(editableAccount, account, Env.getErrors(bindingResult));
+        List<String> errors = Env.getErrors(bindingResult);
+        if(errors.size() > 0) {
+            model.addAttribute(ModelAttr.ERRORS, errors);
+            model.addAttribute(ModelAttr.ACCOUNT, editableAccount);
+            model.addAttribute(Env.ModelAttr.ACTION, isSignUpAction ? Env.Action.SIGNUP : Env.Action.EDIT);
+            return View.EDIT;
+        }
+
+        OperationResult validationResult = accountModel.validateEditableAccount(editableAccount, account, isSignUpAction);
 
         if(validationResult.isFailed()) {
             model.addAttribute(ModelAttr.ERRORS, validationResult.getErrors());
             model.addAttribute(ModelAttr.ACCOUNT, editableAccount);
+            model.addAttribute(Env.ModelAttr.ACTION, isSignUpAction ? Env.Action.SIGNUP : Env.Action.EDIT);
             return View.EDIT;
         }
 
-        OperationValueResult<Account> saveAccountResult = accountModel.saveAccount(editableAccount, account);
+        OperationValueResult<Account> saveAccountResult = accountModel.saveAccount(editableAccount, account, isSignUpAction);
         if(saveAccountResult.isFailed())
             model.addAttribute(ModelAttr.ERRORS, saveAccountResult.getErrors());
 
         setAccountToSession(request, saveAccountResult.getValue());
 
-        return editableAccount.isSignUpAction() ? View.WELCOME_REGISTERED : View.DETAIL;
+        return isSignUpAction ? View.WELCOME_REGISTERED : View.DETAIL;
     }
 
-    private void setAccountToSession(HttpServletRequest request, io.github.satr.jweb.components.entities.Account account) {
+    private void setAccountToSession(HttpServletRequest request, Account account) {
         request.getSession().setAttribute(Env.SessionAttr.ACCOUNT, account);
     }
 
@@ -105,8 +112,8 @@ public class AccountController {
         request.getSession().removeAttribute(Env.SessionAttr.ACCOUNT);
     }
 
-    private io.github.satr.jweb.components.entities.Account getAccountFromSession(HttpServletRequest request) {
-        return (io.github.satr.jweb.components.entities.Account) request.getSession().getAttribute(Env.SessionAttr.ACCOUNT);
+    private Account getAccountFromSession(HttpServletRequest request) {
+        return (Account) request.getSession().getAttribute(Env.SessionAttr.ACCOUNT);
     }
 
     //-- Constants --

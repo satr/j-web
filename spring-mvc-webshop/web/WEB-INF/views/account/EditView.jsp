@@ -10,7 +10,7 @@
 <div class="page">
     <%@include file="/WEB-INF/common/Header.jsp" %>
     <c:choose>
-        <c:when test='${account.isEditAction()}'>
+        <c:when test='${"edit".equals(action)}'>
             <h3>Edit Account</h3>
         </c:when>
         <c:otherwise>
@@ -18,7 +18,7 @@
         </c:otherwise>
     </c:choose>
     <form action="/account/edit" method="post">
-        <input type="hidden" name="action" value="${account.getAction()}">
+        <input type="hidden" name="action" value="${action}">
         <div>
             <jsp:include page="/WEB-INF/common/Errors.jsp" />
             <table class="account">
@@ -35,7 +35,7 @@
                     <td><input type="email" name="email" value="${account.getEmail()}" /></td>
                 </tr>
                 <c:choose>
-                    <c:when test='${account.isEditAction()}'>
+                    <c:when test='${"edit".equals(action)}'>
                         <tr>
                             <td>Repeat New Email</td>
                             <td><input type="text" name="repeatedEmail" value="${account.getRepeatedEmail()}" /></td>

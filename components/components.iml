@@ -6,7 +6,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="persistenceUnit" value="d6fc4137-4d22-4d0d-ab88-0e576af20fa2" />
+          <factory-entry name="persistenceUnit" value="0f9595b9-3bf5-48e3-95e4-3d0c14a6cbc3" />
         </datasource-mapping>
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/META-INF/persistence.xml" />
       </configuration>
@@ -26,8 +26,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Hibernate 5.2.3-5.2.3" level="project" />
-    <orderEntry type="library" exported="" name="mysql:mysql-connector-java:6.0.5" level="project" />
-    <orderEntry type="library" exported="" name="org.hibernate:hibernate-entitymanager:5.2.3.Final" level="project" />
     <orderEntry type="module-library" exported="">
       <library name="JUnit4">
         <CLASSES>
@@ -49,6 +47,8 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="org.mindrot:jbcrypt:0.3m" level="project" />
-    <orderEntry type="library" name="javax.persistence:persistence-api:1.0.2" level="project" />
+    <orderEntry type="library" exported="" name="javax.persistence:persistence-api:1.0.2" level="project" />
+    <orderEntry type="library" name="mysql:mysql-connector-java:6.0.5" level="project" />
+    <orderEntry type="library" name="org.hibernate:hibernate-entitymanager:5.2.3.Final" level="project" />
   </component>
 </module>

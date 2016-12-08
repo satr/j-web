@@ -20,6 +20,16 @@
         <sourceRoots />
       </configuration>
     </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="" />
+        <datasource-mapping>
+          <factory-entry name="persistenceUnit" />
+        </datasource-mapping>
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/out/artifacts/gwt_webshop_Web_exploded/WEB-INF/classes/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -30,5 +40,18 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 9.0.0.M13" level="application_server_libraries" />
     <orderEntry type="library" exported="" name="gwt-user" level="project" />
+    <orderEntry type="module" module-name="frontend-models" exported="" />
+    <orderEntry type="module" module-name="components" exported="" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../components/lib/hibernate-entitymanager-5.2.3.Final.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="mysql:mysql-connector-java:6.0.5" level="project" />
+    <orderEntry type="library" name="org.hibernate:hibernate-entitymanager:5.2.3.Final" level="project" />
   </component>
 </module>

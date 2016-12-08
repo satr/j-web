@@ -7,8 +7,16 @@
         <servlet-name>io.github.satr.jweb.webshop.gwt.main.Main MainService</servlet-name>
         <servlet-class>io.github.satr.jweb.webshop.gwt.main.server.MainServiceImpl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>io.github.satr.jweb.webshop.gwt.main.Main AccountService</servlet-name>
+        <servlet-class>io.github.satr.jweb.webshop.gwt.main.server.account.AccountServiceImpl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>io.github.satr.jweb.webshop.gwt.main.Main MainService</servlet-name>
         <url-pattern>/Main/MainService</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>io.github.satr.jweb.webshop.gwt.main.Main AccountService</servlet-name>
+        <url-pattern>/Main/AccountService</url-pattern>
     </servlet-mapping>
 </web-app>

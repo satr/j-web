@@ -1,7 +1,6 @@
 package io.github.satr.jweb.components.models;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class OperationResult {
     private final ArrayList<String> errors = new ArrayList<>();
@@ -19,7 +18,7 @@ public class OperationResult {
         return !isSucceeded();
     }
 
-    public List<String> getErrors() {
+    public ArrayList<String> getErrors() {
         return errors;
     }
 }

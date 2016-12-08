@@ -13,11 +13,11 @@
                     <td width="130px">
                         <ul class="top-menu">
                             <li>
-                                Hello, <g:Label ui:field="accountFirstName"></g:Label> <g:Button ui:field="accountDetail">Detail</g:Button>
-                            </li>
-                            <li>
+                                <g:HorizontalPanel ui:field="loginDetailPanel">
+                                    <g:Label ui:field="accountFirstName"></g:Label> <g:Button ui:field="accountDetail">Detail</g:Button>
+                                    <g:Button ui:field="logout">Logout</g:Button>
+                                </g:HorizontalPanel>
                                 <g:Button ui:field="login">Login</g:Button>
-                                <g:Button ui:field="logout">Logout</g:Button>
                             </li>
                             <li>
                                 <g:Button ui:field="signUp">Sign Up</g:Button>

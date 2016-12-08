@@ -2,36 +2,13 @@ package io.github.satr.jweb.frontend.models;
 
 import io.github.satr.jweb.components.entities.Account;
 
-public class EditableAccount extends Account {
+import java.io.Serializable;
+
+public class EditableAccount extends Account implements Serializable {
     private String repeatedEmail;
     private String currentPassword;
     private String newPassword;
     private String repeatedPassword;
-    private String action;
-
-    public boolean isEditAction() {
-        return Action.EDIT.equals(action);
-    }
-
-    public boolean isSignUpAction() {
-        return Action.SIGNUP.equals(action);
-    }
-
-    public String getAction() {
-        return action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
-    }
-
-    public void setActionAsEdit() {
-        this.action = Action.EDIT;
-    }
-
-    public void setActionAsSignUp() {
-        this.action = Action.SIGNUP;
-    }
 
     public String getRepeatedEmail() {
         return repeatedEmail;
@@ -83,10 +60,5 @@ public class EditableAccount extends Account {
         dest.setMiddleName(source.getMiddleName());
         dest.setLastName(source.getLastName());
         dest.setEmail(source.getEmail());
-    }
-
-    private class Action {
-        public static final String EDIT = "edit";
-        public static final String SIGNUP = "signup";
     }
 }

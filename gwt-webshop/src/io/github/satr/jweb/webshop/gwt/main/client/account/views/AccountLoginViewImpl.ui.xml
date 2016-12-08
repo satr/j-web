@@ -5,23 +5,21 @@
         <h3>Login</h3>
         <div>
             <c:ErrorView ui:field="errorView" />
-            <form action="/login" method="post">
-                <div>
-                    <table class="product">
-                        <tr><td>Email</td>
-                            <td><input type="text" name="email" /></td>
-                        </tr>
-                        <tr><td>Password</td>
-                            <td><input type="password" name="password" /></td>
-                        </tr>
-                    </table>
-                </div>
-                <br />
-                <div>
-                    <input type="submit" value="Login" />
-                    <input type="button" value="Cancel" onclick="window.location = '/'" />
-                </div>
-            </form>
+            <div>
+                <table class="product">
+                    <tr><td>Email</td>
+                        <td><g:TextBox ui:field="email" /></td>
+                    </tr>
+                    <tr><td>Password</td>
+                        <td><g:PasswordTextBox ui:field="password" /></td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+            <div>
+                <g:Button ui:field="processLogin">Login</g:Button>
+                <g:Button ui:field="cancelLogin">Cancel</g:Button>
+            </div>
         </div>
     </g:HTMLPanel>
 </ui:UiBinder>

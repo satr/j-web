@@ -2,16 +2,21 @@ package io.github.satr.jweb.webshop.gwt.main.client.common.presenters;
 
 import io.github.satr.jweb.webshop.gwt.main.client.account.interfaces.AccountPresenter;
 import io.github.satr.jweb.webshop.gwt.main.client.common.interfaces.*;
+import io.github.satr.jweb.webshop.gwt.main.client.common.models.AccountDTO;
 import io.github.satr.jweb.webshop.gwt.main.client.product.interfaces.ProductPresenter;
 
 public class ApplicationPresenterImpl implements ApplicationPresenter {
     private MainView mainView;
+    private final MenuView menuView;
+    private final ErrorsView errorsView;
     private HomePresenter homePresenter;
     private ProductPresenter productPresenter;
     private AccountPresenter accountPresenter;
 
-    public ApplicationPresenterImpl(MainView view, MenuView menuView) {
+    public ApplicationPresenterImpl(MainView view, MenuView menuView, ErrorsView errorsView) {
         this.mainView = view;
+        this.menuView = menuView;
+        this.errorsView = errorsView;
         menuView.setApplicationPresenter(this);
         view.addMenu(menuView);
     }
@@ -40,6 +45,17 @@ public class ApplicationPresenterImpl implements ApplicationPresenter {
     @Override
     public void showAccountDetail() {
         accountPresenter.showDetail();
+    }
+
+    @Override
+    public void showError(String error) {
+        errorsView.setError(error);
+        this.mainView.show(errorsView);
+    }
+
+    @Override
+    public void setLoggedAccount(AccountDTO accountDTO) {
+        menuView.setLoggedAccount(accountDTO);
     }
 
     @Override

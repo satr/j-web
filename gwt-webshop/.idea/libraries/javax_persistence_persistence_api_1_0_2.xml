@@ -3,9 +3,11 @@
     <properties maven-id="javax.persistence:persistence-api:1.0.2" />
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../components/persistence-api-1.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../components/persistence-api-1.0.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../components/persistence-api-1.0.2-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../components/persistence-api-1.0.2-sources.jar!/" />
     </SOURCES>
   </library>

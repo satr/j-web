@@ -14,7 +14,6 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.List;
 import java.util.Random;
 
 public class AccountModel {
@@ -26,7 +25,7 @@ public class AccountModel {
         random = new Random(System.currentTimeMillis());
     }
 
-    public boolean validateCredentialParams(String email, String password, OperationResult result) {
+    private boolean validateCredentialParams(String email, String password, OperationResult result) {
         if(StringHelper.isEmptyOrWhitespace(email))
             result.addError("Missed Email.");
 
@@ -43,7 +42,7 @@ public class AccountModel {
         return String.format("%032x", new BigInteger(1, md5.digest()));
     }
 
-    private boolean validatePassword(io.github.satr.jweb.components.entities.Account account, String password) {
+    private boolean validatePassword(Account account, String password) {
         String passwordHash = account.getPasswordHash();
         String passwordSalt = account.getPasswordSalt();
         try {
@@ -54,9 +53,7 @@ public class AccountModel {
         }
     }
 
-    private void validateNewPassword(EditableAccount editableAccount, io.github.satr.jweb.components.entities.Account account, OperationResult operationResult) {
-        boolean isSignUpAction = editableAccount.isSignUpAction();
-
+    private void validateNewPassword(EditableAccount editableAccount, Account account, OperationResult operationResult, boolean isSignUpAction) {
         boolean missedNewPassword = StringHelper.isEmptyOrWhitespace(editableAccount.getNewPassword());
         if(isSignUpAction && missedNewPassword)
             operationResult.addError("Missed Password.");
@@ -91,8 +88,8 @@ public class AccountModel {
             operationResult.addError("Missed Last Name");
     }
 
-    private void validateNewEmail(EditableAccount editableAccount, io.github.satr.jweb.components.entities.Account account, OperationResult operationResult) {
-        boolean isSignUpAction = editableAccount.isSignUpAction() || account == null;
+    private void validateNewEmail(EditableAccount editableAccount, Account account, OperationResult operationResult, boolean isSignUpAction) {
+        isSignUpAction |= account == null;
 
         if (StringHelper.isEmptyOrWhitespace(editableAccount.getEmail())) {
             if (isSignUpAction)
@@ -112,24 +109,20 @@ public class AccountModel {
             operationResult.addError("User with this Email already registered");
     }
 
-    public OperationResult validateEditableProduct(EditableAccount editableAccount, Account account, List<String> errors) {
+    public OperationResult validateEditableAccount(EditableAccount editableAccount, Account account, boolean isSignUpAction) {
         OperationResult operationResult = new OperationResult();
-
-        for (String err: errors)
-            operationResult.addError(err);
-
         validateNewNames(editableAccount, operationResult);
-        validateNewEmail(editableAccount, account, operationResult);
-        validateNewPassword(editableAccount, account, operationResult);
+        validateNewEmail(editableAccount, account, operationResult, isSignUpAction);
+        validateNewPassword(editableAccount, account, operationResult, isSignUpAction);
 
         return operationResult;
     }
 
-    private boolean shouldChangePassword(EditableAccount editableAccount) {
-        return editableAccount.isSignUpAction() ||  !StringHelper.isEmptyOrWhitespace(editableAccount.getNewPassword());
+    private boolean shouldChangePassword(EditableAccount editableAccount, boolean isSignUpAction) {
+        return isSignUpAction ||  !StringHelper.isEmptyOrWhitespace(editableAccount.getNewPassword());
     }
 
-    private void setAccountPassword(io.github.satr.jweb.components.entities.Account account, String password) throws NoSuchAlgorithmException {
+    private void setAccountPassword(Account account, String password) throws NoSuchAlgorithmException {
         account.setPasswordHash(getHashBy(password, account.getPasswordSalt()));
     }
 
@@ -137,36 +130,41 @@ public class AccountModel {
         return "" + random.nextLong();
     }
 
-    public io.github.satr.jweb.components.entities.Account createAccount() {
-        io.github.satr.jweb.components.entities.Account account = new io.github.satr.jweb.components.entities.Account();
+    public Account createAccount() {
+        Account account = new Account();
         account.setCreatedOn(Env.getTimestamp());
         account.setPasswordSalt(createRandomString());
         return account;
     }
 
-    public boolean authenticate(String email, String password, OperationValueResult<Account> result) {
+    public OperationValueResult<Account> authenticate(String email, String password) {
+        OperationValueResult<Account> result = new OperationValueResult<>();
+
+        if(!validateCredentialParams(email, password, result))
+            return result;
+
         Account account;
         try {
             account = accountRepository.getByEmail(email);
         } catch (SQLException e) {
             result.addError(e.getMessage());//TODO -  wrap with user-friendly message and log
-            return false;
+            return result;
         }
 
         if(account == null || !validatePassword(account, password)) {
             result.addError("Invalid Email or Password.");
-            return false;
+            return result;
         }
 
         result.setValue(account);
-        return true;
+        return result;
     }
 
-    public OperationValueResult<Account> saveAccount(EditableAccount editableAccount, Account account) {
+    public OperationValueResult<Account> saveAccount(EditableAccount editableAccount, Account account, boolean isSignUpAction) {
         editableAccount.copyTo(account);
         OperationValueResult<Account> result = new OperationValueResult<>();
         try {
-            if(shouldChangePassword(editableAccount))
+            if(shouldChangePassword(editableAccount, isSignUpAction))
                 setAccountPassword(account, editableAccount.getNewPassword());
             account.setUpdatedOn(new Timestamp(new Date().getTime()));
             accountRepository.save(account);
